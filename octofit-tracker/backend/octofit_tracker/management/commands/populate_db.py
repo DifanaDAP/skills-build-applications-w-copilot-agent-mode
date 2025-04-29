@@ -5,6 +5,13 @@ class Command(BaseCommand):
     help = 'Populate the database with test data'
 
     def handle(self, *args, **kwargs):
+        # Clear existing data
+        User.objects.all().delete()
+        Team.objects.all().delete()
+        Activity.objects.all().delete()
+        Leaderboard.objects.all().delete()
+        Workout.objects.all().delete()
+
         # Create test users
         User.objects.create(email="john.doe@example.com", name="John Doe", age=25)
         User.objects.create(email="jane.smith@example.com", name="Jane Smith", age=30)
