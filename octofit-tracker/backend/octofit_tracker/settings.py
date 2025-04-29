@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-5f-5g%%9)g0gw0h-n&#!9$0ggfi9wicqt^g#6#!ks9#(43&*de
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jubilant-adventure-5gqwjxv6rg4jcv44j-8000.app.github.dev']
 
 
 # Application definition
@@ -37,13 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
-    "rest_framework",
     "octofit_tracker",
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -78,13 +75,11 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'octofit_db',
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Password validation
